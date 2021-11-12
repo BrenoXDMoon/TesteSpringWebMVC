@@ -19,14 +19,14 @@ public class JediResource {
     }
 
     @GetMapping("api/jedi/{id}")
-    public Jedi getJedi(@PathVariable("id") Long id) {
+    public ResponseEntity getJedi(@PathVariable("id") Long id) {
 
         Optional<Jedi> jedi = repository.findById(id);
 
         if (jedi.isPresent()) {
-            return jedi.get();
+            return ResponseEntity.ok(jedi.get());
         } else {
-            throw new JediNotFoundException();
+            return ResponseEntity.notFound().build();
         }
     }
 
