@@ -1,4 +1,4 @@
-package br.com.dio.controller;
+package com.spring.web.controller;
 
 import javax.validation.Valid;
 
@@ -23,11 +23,11 @@ public class JediController {
     @GetMapping("/jedi")
     public ModelAndView jedi() {
 
-        final ModelAndView mv = new ModelAndView();
-        mv.setViewName("jedi");
-        mv.addObject("allJedi", repository.getAll());
+        final ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("jedi");
+        modelAndView.addObject("allJedi", repository.getAll());
 
-        return mv;
+        return modelAndView;
     }
 
     @GetMapping("/new-jedi")

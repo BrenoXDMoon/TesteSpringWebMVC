@@ -1,13 +1,12 @@
-package br.com.dio.testespringmvc.TesteSpringWebMVC;
+package com.spring.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TesteSpringWebMvcApplication {
+public class WebMvcApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TesteSpringWebMvcApplication.class, args);
+		SpringApplication.run(WebMvcApplication.class, args);
 	}
-
 }

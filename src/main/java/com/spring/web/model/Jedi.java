@@ -1,36 +1,44 @@
-package br.com.dio.model;
+package com.spring.web.model;
 
-public class Jedi{
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+public class Jedi {
+
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    private Long id;
 
     @NotBlank(message = "Name cannot be blank")
     @Size(min = 3, max = 20, message = "Name must have between 3 and 20 letters")
     private String name;
-    
+
     @Size(max = 20, message = "Last Name must not have more than 20 letters")
     private String lastName;
 
-    public Jedi (final String name, final String lastName) {
+    public Jedi(final String name, final String lastName) {
         this.name = name;
         this.lastName = lastName;
     }
 
-    public Jedi () {
-        
+    public Jedi() {
+
     }
 
-    public String getName () {
+    public String getName() {
         return name;
     }
 
-    public void setName (final String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
-    public String getLastName () {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastName (final String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
+
 }
